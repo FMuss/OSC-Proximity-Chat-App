@@ -54,8 +54,9 @@ export const SignOutButton: React.FC<SignOutButtonProps> = () => {
       style={styles.sign_out_button}
       onPress={handleSignOut}
       disabled={loading}>
-      <Text style={styles.button_text}>Sign Out</Text>
+      <Text style={styles.button_text}>SIGN OUT</Text>
     </TouchableOpacity>
+  
   );
 };
 
@@ -72,14 +73,6 @@ export const LogInButton: React.FC<{ onPress?: () => void }> = ({
 export const SignUpButton: React.FC<{ onPress?: () => void }> = ({
   onPress,
 }) => {
-  const [fontsLoaded, fontError] = useFonts({
-    "Gilroy-ExtraBold": require("../../../assets/fonts/Gilroy-ExtraBold.otf"),
-    "Gilroy-Light": require("../../../assets/fonts/Gilroy-Light.otf"),
-  });
-
-  if (!fontsLoaded && !fontError) {
-    return null;
-  }
 
   return (
     <TouchableOpacity style={styles.login_button} onPress={onPress}>
@@ -135,20 +128,18 @@ const styles = StyleSheet.create({
     },
     elevation: 2,
   },
-
   button_text: {
     color: "white",
     fontFamily: "Quicksand-Medium",
     fontSize: Dimensions.get("window").height * 0.027,
   },
-
   sign_out_button: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "red",
     height: Dimensions.get("window").height * 0.05,
-    marginTop: Dimensions.get("window").height * 0.01,
+    marginTop: Dimensions.get("window").height * 0.3,
     borderRadius: 8,
     padding: 5,
   },
